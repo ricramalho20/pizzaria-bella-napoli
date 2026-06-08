@@ -1,0 +1,102 @@
+.pizza-card {
+  background: var(--branco);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--sombra-card);
+  border: 1px solid var(--creme-escuro);
+  transition: transform 0.25s, box-shadow 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+
+.pizza-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+}
+
+.pizza-card__img {
+  background: var(--cinza-suave);
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  position: relative;
+}
+
+.pizza-card__badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: var(--vermelho);
+  color: var(--branco);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+}
+
+.pizza-card__body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pizza-card__name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--marrom);
+  margin-bottom: 0.5rem;
+}
+
+.pizza-card__desc {
+  font-size: 0.88rem;
+  color: var(--marrom-claro);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+.pizza-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pizza-card__price {
+  display: flex;
+  flex-direction: column;
+}
+
+.pizza-card__price-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--marrom-claro);
+}
+
+.pizza-card__price-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--vermelho);
+  font-weight: 700;
+}
+
+.pizza-card__btn {
+  background: var(--vermelho);
+  color: var(--branco);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radius);
+  transition: background 0.2s;
+}
+
+.pizza-card__btn:hover {
+  background: var(--vermelho-escuro);
+}

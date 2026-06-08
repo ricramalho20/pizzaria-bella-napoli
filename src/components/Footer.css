@@ -1,0 +1,79 @@
+.footer {
+  background: var(--marrom);
+  color: var(--creme-escuro);
+  padding-top: 4rem;
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer__logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--branco);
+  margin-bottom: 0.75rem;
+}
+
+.footer__logo span {
+  color: var(--dourado);
+}
+
+.footer__tagline {
+  font-size: 0.9rem;
+  color: rgba(253, 246, 236, 0.6);
+  line-height: 1.6;
+}
+
+.footer__links h4,
+.footer__contact h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--dourado);
+  margin-bottom: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.footer__links ul {
+  list-style: none;
+}
+
+.footer__links ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer__links a {
+  font-size: 0.9rem;
+  color: rgba(253, 246, 236, 0.65);
+  transition: color 0.2s;
+}
+
+.footer__links a:hover {
+  color: var(--branco);
+}
+
+.footer__contact p {
+  font-size: 0.88rem;
+  color: rgba(253, 246, 236, 0.65);
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.footer__bottom {
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 0.8rem;
+  color: rgba(253, 246, 236, 0.35);
+}
+
+@media (max-width: 768px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

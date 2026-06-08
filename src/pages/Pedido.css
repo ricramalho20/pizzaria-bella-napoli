@@ -1,0 +1,326 @@
+.pedido-page {
+  padding-top: 80px;
+}
+
+.pedido-hero {
+  background: var(--creme);
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--creme-escuro);
+}
+
+.pedido-body {
+  padding: 3rem 1.5rem 5rem;
+}
+
+.pedido-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.pedido-card {
+  background: var(--branco);
+  border: 1px solid var(--creme-escuro);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.pedido-card__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--marrom);
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+.tipo-tabs {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.tipo-tab {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--creme-escuro);
+  background: var(--cinza-suave);
+  color: var(--marrom-claro);
+  font-size: 0.95rem;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.tipo-tab.active {
+  border-color: var(--vermelho);
+  background: rgba(178, 34, 34, 0.06);
+  color: var(--vermelho);
+}
+
+.pedido-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.pedido-select {
+  border: 1.5px solid var(--creme-escuro);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  color: var(--preto);
+  background: var(--branco);
+  outline: none;
+  cursor: pointer;
+  flex: 1;
+  min-width: 150px;
+}
+
+.pedido-select--sm {
+  flex: 0;
+  min-width: auto;
+}
+
+.pedido-select:focus {
+  border-color: var(--vermelho);
+}
+
+.pedido-qty {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1.5px solid var(--creme-escuro);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.pedido-qty button {
+  background: var(--cinza-suave);
+  color: var(--marrom);
+  border: none;
+  width: 32px;
+  height: 36px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.pedido-qty button:hover {
+  background: var(--creme-escuro);
+}
+
+.pedido-qty span {
+  min-width: 32px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--marrom);
+}
+
+.pedido-item__preco {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--vermelho);
+  font-weight: 700;
+  min-width: 80px;
+  text-align: right;
+}
+
+.pedido-item__remove {
+  background: none;
+  border: none;
+  color: var(--marrom-claro);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.pedido-item__remove:hover { opacity: 1; color: var(--vermelho); }
+
+.btn-add-item {
+  background: none;
+  border: 1.5px dashed var(--creme-escuro);
+  border-radius: var(--radius);
+  color: var(--vermelho);
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 0.55rem 1.2rem;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 0.5rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.btn-add-item:hover {
+  border-color: var(--vermelho);
+  background: rgba(178,34,34,0.04);
+}
+
+.form-group {
+  margin-bottom: 1.1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--marrom-claro);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border: 1.5px solid var(--creme-escuro);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.85rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--preto);
+  background: var(--branco);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--vermelho);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* RESUMO */
+.pedido-resumo {
+  background: var(--branco);
+  border: 1px solid var(--creme-escuro);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  position: sticky;
+  top: 90px;
+}
+
+.resumo-linha {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--marrom-claro);
+  margin-bottom: 0.6rem;
+}
+
+.resumo-linha--taxa {
+  color: var(--marrom-claro);
+  font-style: italic;
+}
+
+.resumo-separador {
+  border: none;
+  border-top: 1px solid var(--creme-escuro);
+  margin: 1rem 0;
+}
+
+.resumo-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+}
+
+.resumo-total span {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--marrom);
+}
+
+.resumo-total strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  color: var(--vermelho);
+}
+
+.resumo-pagamento {
+  background: var(--cinza-suave);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.resumo-pagamento__label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--marrom-claro);
+  margin-bottom: 0.6rem;
+}
+
+.pagamento-opcoes {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pagamento-opcao {
+  background: var(--branco);
+  border: 1px solid var(--creme-escuro);
+  border-radius: 100px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.82rem;
+  color: var(--marrom);
+}
+
+.btn-confirmar {
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+/* SUCESSO */
+.pedido-sucesso {
+  text-align: center;
+  padding: 8rem 2rem;
+}
+
+.pedido-sucesso__icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.pedido-sucesso h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--marrom);
+  margin-bottom: 1rem;
+}
+
+.pedido-sucesso p {
+  color: var(--marrom-claro);
+  max-width: 480px;
+  margin: 0 auto 1rem;
+  line-height: 1.8;
+}
+
+.pedido-sucesso__tempo {
+  font-weight: 500;
+  color: var(--vermelho) !important;
+  margin-bottom: 2rem !important;
+}
+
+@media (max-width: 768px) {
+  .pedido-grid { grid-template-columns: 1fr; }
+  .pedido-resumo { position: static; }
+  .pedido-item { gap: 0.5rem; }
+}
