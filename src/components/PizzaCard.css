@@ -1,102 +1,50 @@
-.pizza-card {
-  background: var(--branco);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--sombra-card);
-  border: 1px solid var(--creme-escuro);
-  transition: transform 0.25s, box-shadow 0.25s;
-  display: flex;
-  flex-direction: column;
+.pcard {
+  background: var(--branco); border-radius: var(--radius-lg);
+  overflow: hidden; border: 1px solid var(--creme-escuro);
+  box-shadow: var(--sombra-sm); transition: transform 0.25s, box-shadow 0.25s;
+  display: flex; flex-direction: column;
 }
+.pcard:hover { transform: translateY(-5px); box-shadow: var(--sombra); }
 
-.pizza-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--sombra);
-}
+.pcard__img-wrap { position: relative; overflow: hidden; background: #fff; }
 
-.pizza-card__img {
-  background: var(--cinza-suave);
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 5rem;
-  position: relative;
+/* Imagem levemente esticada na horizontal */
+.pcard__img {
+  width: 100%;
+  height: 195px;
+  object-fit: cover;
+  object-position: center;
+  transform: scaleX(1.08);
+  transition: transform 0.4s ease;
+  display: block;
+  background: #fff;
 }
+.pcard:hover .pcard__img { transform: scaleX(1.12) scale(1.03); }
 
-.pizza-card__badge {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  background: var(--vermelho);
-  color: var(--branco);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 0.3rem 0.7rem;
-  border-radius: 20px;
+.pcard__badge {
+  position: absolute; top: 0.7rem; right: 0.7rem;
+  background: var(--vermelho); color: #fff;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em;
+  padding: 0.28rem 0.7rem; border-radius: 20px;
 }
-
-.pizza-card__body {
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+.pcard__body { padding: 1.25rem; display: flex; flex-direction: column; flex: 1; }
+.pcard__name { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--marrom); margin-bottom: 0.4rem; }
+.pcard__desc { font-size: 0.85rem; color: var(--marrom-claro); line-height: 1.6; flex: 1; margin-bottom: 1rem; }
+.pcard__sizes { display: flex; gap: 0.4rem; margin-bottom: 1rem; }
+.pcard__size {
+  flex: 1; padding: 0.3rem 0; font-size: 0.78rem; font-weight: 500;
+  border: 1.5px solid var(--creme-escuro); border-radius: 100px;
+  background: var(--cinza); color: var(--marrom-claro); cursor: pointer; transition: all 0.15s;
 }
-
-.pizza-card__name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  color: var(--marrom);
-  margin-bottom: 0.5rem;
+.pcard__size.active { border-color: var(--vermelho); background: rgba(192,57,43,0.08); color: var(--vermelho); }
+.pcard__footer { display: flex; align-items: center; justify-content: space-between; }
+.pcard__from { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--marrom-claro); }
+.pcard__price { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--vermelho); font-weight: 700; }
+.pcard__btn {
+  background: var(--vermelho); color: #fff; border: none;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em;
+  padding: 0.55rem 1.1rem; border-radius: var(--radius); cursor: pointer;
+  transition: all 0.2s;
 }
-
-.pizza-card__desc {
-  font-size: 0.88rem;
-  color: var(--marrom-claro);
-  line-height: 1.6;
-  flex: 1;
-  margin-bottom: 1.25rem;
-}
-
-.pizza-card__footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.pizza-card__price {
-  display: flex;
-  flex-direction: column;
-}
-
-.pizza-card__price-label {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--marrom-claro);
-}
-
-.pizza-card__price-value {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  color: var(--vermelho);
-  font-weight: 700;
-}
-
-.pizza-card__btn {
-  background: var(--vermelho);
-  color: var(--branco);
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 0.55rem 1.2rem;
-  border-radius: var(--radius);
-  transition: background 0.2s;
-}
-
-.pizza-card__btn:hover {
-  background: var(--vermelho-escuro);
-}
+.pcard__btn:hover { background: var(--vermelho-escuro); }
+.pcard__btn.added { background: #27AE60; }

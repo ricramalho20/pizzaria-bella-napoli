@@ -4,80 +4,49 @@ import { pizzas, categorias } from '../data/pizzas'
 import './Cardapio.css'
 
 export default function Cardapio() {
-  const [categoria, setCategoria] = useState('todas')
+  const [cat, setCat] = useState('todas')
   const [busca, setBusca] = useState('')
 
-  const filtradas = pizzas.filter(p => {
-    const matchCat = categoria === 'todas' || p.categoria === categoria
-    const matchBusca = p.nome.toLowerCase().includes(busca.toLowerCase()) ||
-      p.descricao.toLowerCase().includes(busca.toLowerCase())
-    return matchCat && matchBusca
-  })
+  const lista = pizzas.filter(p =>
+    (cat === 'todas' || p.categoria === cat) &&
+    (p.nome.toLowerCase().includes(busca.toLowerCase()) || p.descricao.toLowerCase().includes(busca.toLowerCase()))
+  )
 
   return (
     <div className="cardapio-page">
-      <div className="cardapio-hero">
+      <div className="page-hero">
         <div className="container">
-          <div className="ornament">✦</div>
-          <h1 className="section-title">Nosso Cardápio</h1>
-          <p className="section-subtitle">
-            Pizzas artesanais feitas com ingredientes frescos e massa de fermentação lenta
-          </p>
+          <span className="section-label center-label">Escolha a sua</span>
+          <h1 className="section-title center">Nosso Cardápio</h1>
+          <p className="section-sub center">Pizzas artesanais com ingredientes selecionados e massa de fermentação lenta</p>
         </div>
       </div>
 
-      <div className="cardapio-body container">
-        {/* Filtros */}
+      <div className="container cardapio-body">
         <div className="cardapio-filtros">
-          <div className="cardapio-categorias">
+          <div className="cats">
             {categorias.map(c => (
-              <button
-                key={c.id}
-                className={`cat-btn ${categoria === c.id ? 'active' : ''}`}
-                onClick={() => setCategoria(c.id)}
-              >
-                {c.label}
-              </button>
+              <button key={c.id} className={`cat-btn ${cat === c.id ? 'active' : ''}`} onClick={() => setCat(c.id)}>{c.label}</button>
             ))}
           </div>
-          <input
-            type="search"
-            placeholder="Buscar pizza..."
-            value={busca}
-            onChange={e => setBusca(e.target.value)}
-            className="cardapio-busca"
-          />
+          <input type="search" placeholder="🔍 Buscar pizza..." value={busca} onChange={e => setBusca(e.target.value)} className="busca-input" />
         </div>
 
-        {/* Grid */}
-        {filtradas.length > 0 ? (
-          <div className="cardapio-grid">
-            {filtradas.map(pizza => (
-              <PizzaCard key={pizza.id} pizza={pizza} />
-            ))}
-          </div>
-        ) : (
-          <div className="cardapio-vazio">
-            <p>🍕 Nenhuma pizza encontrada para "<strong>{busca}</strong>"</p>
-          </div>
-        )}
+        {lista.length > 0
+          ? <div className="cards-grid">{lista.map(p => <PizzaCard key={p.id} pizza={p} />)}</div>
+          : <div className="vazio"><p>🍕 Nenhuma pizza encontrada</p></div>
+        }
 
-        {/* Info tamanhos */}
-        <div className="cardapio-tamanhos">
+        <div className="tamanhos-info">
           <h3>Tamanhos disponíveis</h3>
           <div className="tamanhos-grid">
-            <div>
-              <strong>Pequena</strong>
-              <span>25 cm · 4 fatias</span>
-            </div>
-            <div>
-              <strong>Média</strong>
-              <span>30 cm · 6 fatias</span>
-            </div>
-            <div>
-              <strong>Grande</strong>
-              <span>35 cm · 8 fatias</span>
-            </div>
+            {[['Pequena', '25 cm', '4 fatias', '1–2 pessoas'], ['Média', '30 cm', '6 fatias', '2–3 pessoas'], ['Grande', '35 cm', '8 fatias', '3–4 pessoas']].map(([t, cm, f, p]) => (
+              <div key={t} className="tamanho-item">
+                <strong>{t}</strong>
+                <span>{cm} · {f}</span>
+                <span>{p}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

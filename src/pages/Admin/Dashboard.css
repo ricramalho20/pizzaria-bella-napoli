@@ -1,0 +1,44 @@
+.admin-page { padding-top: 80px; }
+.admin-body { padding: 3rem 1.5rem 5rem; }
+
+.admin-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
+.admin-stat { background: var(--branco); border: 1px solid var(--creme-escuro); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+.admin-stat span { font-size: 2rem; }
+.admin-stat strong { display: block; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--vermelho); }
+.admin-stat p { font-size: 0.8rem; color: var(--marrom-claro); }
+
+.admin-tabs { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; }
+.admin-tabs button { background: var(--cinza); border: 1.5px solid var(--creme-escuro); border-radius: var(--radius); padding: 0.6rem 1.4rem; font-size: 0.9rem; font-weight: 500; color: var(--marrom-claro); cursor: pointer; transition: all 0.2s; }
+.admin-tabs button.active { background: var(--vermelho); border-color: var(--vermelho); color: #fff; }
+
+.admin-card { background: var(--branco); border: 1px solid var(--creme-escuro); border-radius: var(--radius-lg); padding: 1.75rem; }
+.admin-card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--marrom); margin-bottom: 1.25rem; font-weight: 400; }
+
+.tabela { display: flex; flex-direction: column; }
+.tabela__header { display: grid; grid-template-columns: 0.8fr 1.2fr 2fr 0.8fr 1fr 1.2fr; gap: 1rem; padding: 0.6rem 0.75rem; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--marrom-claro); font-weight: 700; border-bottom: 2px solid var(--creme-escuro); }
+.tabela__row { display: grid; grid-template-columns: 0.8fr 1.2fr 2fr 0.8fr 1fr 1.2fr; gap: 1rem; padding: 0.85rem 0.75rem; align-items: center; font-size: 0.88rem; border-bottom: 1px solid var(--creme-escuro); }
+.tabela__row:last-child { border-bottom: none; }
+.tabela__id { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--marrom); }
+.tabela__itens { color: var(--marrom-claro); font-size: 0.82rem; }
+.tabela__total { font-family: 'Playfair Display', serif; color: var(--vermelho); font-weight: 700; }
+
+.status-select { border: none; border-radius: 100px; padding: 0.35rem 0.7rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; cursor: pointer; }
+.status--aguardando { background: rgba(149,165,166,0.15); color: #7F8C8D; }
+.status--em-preparo { background: rgba(243,156,18,0.15); color: #F39C12; }
+.status--a-caminho { background: rgba(41,128,185,0.15); color: #2980B9; }
+.status--entregue { background: rgba(39,174,96,0.15); color: #27AE60; }
+
+.tabela__header--cardapio, .tabela__row--cardapio { grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr; }
+.tabela__pizza { display: flex; align-items: center; gap: 0.75rem; font-weight: 500; color: var(--marrom); }
+.tabela__pizza img { width: 50px; height: 36px; object-fit: cover; object-position: center; transform: scaleX(1.06); border-radius: 4px; }
+.tabela__cat { text-transform: capitalize; color: var(--marrom-claro); }
+
+.admin-nota { margin-top: 1.5rem; padding: 1rem; background: var(--cinza); border-radius: var(--radius); font-size: 0.85rem; color: var(--marrom-claro); }
+
+@media (max-width: 1000px) { .admin-stats { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 768px) {
+  .tabela__header { display: none; }
+  .tabela__row, .tabela__row--cardapio { grid-template-columns: 1fr; gap: 0.3rem; padding: 1rem 0.5rem; }
+  .tabela__pizza img { display: none; }
+}
+@media (max-width: 480px) { .admin-stats { grid-template-columns: 1fr; } }

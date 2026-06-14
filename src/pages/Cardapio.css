@@ -1,122 +1,18 @@
-.cardapio-page {
-  padding-top: 80px;
-}
-
-.cardapio-hero {
-  background: var(--creme);
-  padding: 4rem 0 3rem;
-  border-bottom: 1px solid var(--creme-escuro);
-}
-
-.cardapio-body {
-  padding: 3rem 1.5rem 5rem;
-}
-
-.cardapio-filtros {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 2.5rem;
-}
-
-.cardapio-categorias {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.cat-btn {
-  background: var(--branco);
-  border: 1.5px solid var(--creme-escuro);
-  color: var(--marrom-claro);
-  font-size: 0.88rem;
-  font-weight: 500;
-  padding: 0.5rem 1.2rem;
-  border-radius: 100px;
-  transition: all 0.2s;
-  cursor: pointer;
-}
-
-.cat-btn:hover,
-.cat-btn.active {
-  background: var(--vermelho);
-  border-color: var(--vermelho);
-  color: var(--branco);
-}
-
-.cardapio-busca {
-  border: 1.5px solid var(--creme-escuro);
-  border-radius: var(--radius);
-  padding: 0.55rem 1rem;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.9rem;
-  color: var(--preto);
-  background: var(--branco);
-  outline: none;
-  min-width: 200px;
-  transition: border-color 0.2s;
-}
-
-.cardapio-busca:focus {
-  border-color: var(--vermelho);
-}
-
-.cardapio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
-}
-
-.cardapio-vazio {
-  text-align: center;
-  padding: 5rem 0;
-  color: var(--marrom-claro);
-  font-size: 1.1rem;
-}
-
-.cardapio-tamanhos {
-  background: var(--cinza-suave);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  border: 1px solid var(--creme-escuro);
-}
-
-.cardapio-tamanhos h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  color: var(--marrom);
-  margin-bottom: 1.25rem;
-  font-weight: 400;
-}
-
-.tamanhos-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.tamanhos-grid > div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.tamanhos-grid strong {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  color: var(--marrom);
-  font-weight: 700;
-}
-
-.tamanhos-grid span {
-  font-size: 0.85rem;
-  color: var(--marrom-claro);
-}
-
-@media (max-width: 600px) {
-  .cardapio-filtros { flex-direction: column; align-items: flex-start; }
-  .tamanhos-grid { grid-template-columns: 1fr; }
-}
+.cardapio-page { padding-top: 80px; }
+.page-hero { background: var(--creme); padding: 4rem 0 3rem; border-bottom: 1px solid var(--creme-escuro); }
+.cardapio-body { padding: 3rem 1.5rem 5rem; }
+.cardapio-filtros { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.cats { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.cat-btn { background: var(--branco); border: 1.5px solid var(--creme-escuro); color: var(--marrom-claro); font-size: 0.88rem; font-weight: 500; padding: 0.5rem 1.2rem; border-radius: 100px; cursor: pointer; transition: all 0.2s; }
+.cat-btn:hover, .cat-btn.active { background: var(--vermelho); border-color: var(--vermelho); color: #fff; }
+.busca-input { border: 1.5px solid var(--creme-escuro); border-radius: var(--radius); padding: 0.55rem 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--preto); background: var(--branco); outline: none; min-width: 220px; transition: border-color 0.2s; }
+.busca-input:focus { border-color: var(--vermelho); }
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 2rem; margin-bottom: 4rem; }
+.vazio { text-align: center; padding: 5rem 0; color: var(--marrom-claro); font-size: 1.1rem; }
+.tamanhos-info { background: var(--cinza); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--creme-escuro); }
+.tamanhos-info h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--marrom); margin-bottom: 1.25rem; font-weight: 400; }
+.tamanhos-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.tamanho-item { display: flex; flex-direction: column; gap: 0.2rem; }
+.tamanho-item strong { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--marrom); }
+.tamanho-item span { font-size: 0.84rem; color: var(--marrom-claro); }
+@media (max-width: 600px) { .cardapio-filtros { flex-direction: column; align-items: flex-start; } .tamanhos-grid { grid-template-columns: 1fr; } }
